@@ -1,6 +1,7 @@
 # Pointer Array Functions
 
 - Aceept [09_00_pointers](https://classroom.github.com/a/yJ88BZQ_)
+- Try [main.cpp](main.cpp) with [array_functions.h](array_functions.h)
 
 ---
 
