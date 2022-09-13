@@ -139,23 +139,15 @@ int main(int argc, char **argv)
 
 
 /*
-build git:(master) ✗  😊 $> tr ..
-..
-├── _tests
-│   ├── _test_files
-│   ├── _test_includes
-│   └── other
-│       └── cmake
-├── build
-│   ├── bin
-│   └── lib
-├── cmake
-└── includes
-    ├── add_entry
-    │   └── add_entry.h
-    └── array_functions
-        └── array_functions.h
-12 directories, 0 files
+build git:(master) ✗  😊 $> tree includes 
+
+includes
+├── add_entry
+│   └── add_entry.h
+└── array_functions
+    └── array_functions.h
+2 directories, 2 files
+
 build git:(master) ✗  😊 $> ./bin/basic_test
 ---------- running basic_test ---------
 [==========] Running 2 tests from 1 test case.
