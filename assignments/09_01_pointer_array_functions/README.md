@@ -33,6 +33,10 @@ T* allocate(int capacity=MINIMUM_CAPACITY);
 template<typename T>
 T* reallocate(T* a, int size, int capacity);
 
+// delete dynamic array
+template <typename T>
+T* deallocate(T* a);
+
 // init array with value
 template<typename T>
 void init_array(T* a, int size, T init_item=T());
