@@ -36,12 +36,6 @@ bool test_basic_add_entry_int(bool debug = false){
   }
   cout << endl;
 
-  // search_entry
-  int* index = search_entry(arr, size, 4);
-  int found = index == nullptr ? -1 : *index;
-  cout << "search_entry returned: " << found << endl;
-  cout << endl;
-
   // remove_entry
   arr = remove_entry(arr, 4, size, capacity);
   cout << "removed [4]: ";
@@ -54,9 +48,36 @@ bool test_basic_add_entry_int(bool debug = false){
   print_array(arr, size, capacity);
   cout << endl;
 
+  int* index;
+  int value;
+
+  // select_entry
+  index = select_entry(arr, size, 4);
+  value = index == nullptr ? -1 : *index;
+  cout << "select_entry at position 4 returned item: " << value << endl;
+  cout << endl;
+
+  // search_entry
+  index = search_entry(arr, size, 99);
+  value = index == nullptr ? -1 : index-arr;
+  cout << "search_entry item 99 returned position: " << value << endl;
+  cout << endl;
+
+  index = search_entry(arr, size, 4);
+  value = index == nullptr ? -1 : index-arr;
+  cout << "search_entry item 4 returned position: " << value << endl;
+  cout << endl;
+
+  // update_entry
+  index = update_entry(arr, size, 4, 77);
+  value = index == nullptr ? -1 : *index;
+  cout << "update_entry position 4 with 77: ";
+  print_array(arr, size, capacity);
+  cout << endl;
+
   // erase_entry
   arr = erase_entry(arr, 4, size, capacity);
-  cout << "erased item at position 4 (the 99): ";
+  cout << "erased item at position 4 (the 77): ";
   print_array(arr, size, capacity);
   cout << endl;
 
@@ -76,7 +97,7 @@ bool test_basic_add_entry_string(bool debug = false){
   cout << "MINIMUM_CAPACITY: " << MINIMUM_CAPACITY << endl;
   int capacity = MINIMUM_CAPACITY;
   string *arr = allocate<string>(capacity);
-  string list[10] = {"vector", "BST", "Pair", "Map", "Multimap", "Stack", "Queue"};
+  string list[10] = {"vector", "BST", "Pair", "Map", "Set", "Stack", "Queue"};
   int size = 0;
 
   // add_entry
@@ -87,9 +108,31 @@ bool test_basic_add_entry_string(bool debug = false){
   }
   cout << endl;
 
+  string* index;
+  string value;
+  int found;
+  // select_entry
+  index = select_entry(arr, size, 4);
+  value = index == nullptr ? "-1" : *index;
+  cout << "select_entry at position 4 returned item: " << value << endl;
+  cout << endl;
+
   // search_entry
-  string* index = search_entry(arr, size,string("Map"));
-  cout << "search_entry returned: " << *index << endl;
+  index = search_entry(arr, size, string("Set"));
+  found = index == nullptr ? -1 : index-arr;
+  cout << "search_entry item Set returned position: " << found << endl;
+  cout << endl;
+
+  index = search_entry(arr, size, string("SetSet"));
+  found = index == nullptr ? -1 : index-arr;
+  cout << "search_entry item SetSet returned position: " << found << endl;
+  cout << endl;
+
+  // update_entry
+  index = update_entry(arr, size, 4, string("Tree"));
+  value = index == nullptr ? "-1" : *index;
+  cout << "update_entry position 4 with string(\"Tree\"): ";
+  print_array(arr, size, capacity);
   cout << endl;
 
   // remove_entry
@@ -155,66 +198,78 @@ build git:(master) ✗  😊 $> ./bin/basic_test
 [----------] 2 tests from TEST_BASIC
 [ RUN      ] TEST_BASIC.TestBasicInt
 MINIMUM_CAPACITY: 3
-adding [0] ( 1/ 3) [    0 ]
-adding [1] ( 2/ 3) [    0     1 ]
-adding [2] ( 3/ 3) [    0     1     2 ]
-adding [3] ( 4/ 6) [    0     1     2     3 ]
-adding [4] ( 5/ 6) [    0     1     2     3     4 ]
-adding [5] ( 6/ 6) [    0     1     2     3     4     5 ]
-adding [6] ( 7/12) [    0     1     2     3     4     5     6 ]
-adding [7] ( 8/12) [    0     1     2     3     4     5     6     7 ]
-adding [8] ( 9/12) [    0     1     2     3     4     5     6     7     8 ]
-adding [9] (10/12) [    0     1     2     3     4     5     6     7     8     9 ]
-adding [10] (11/12) [    0     1     2     3     4     5     6     7     8     9    10 ]
-adding [11] (12/12) [    0     1     2     3     4     5     6     7     8     9    10    11 ]
-adding [12] (13/24) [    0     1     2     3     4     5     6     7     8     9    10    11    12 ]
-adding [13] (14/24) [    0     1     2     3     4     5     6     7     8     9    10    11    12    13 ]
-adding [14] (15/24) [    0     1     2     3     4     5     6     7     8     9    10    11    12    13    14 ]
+adding [0] ( 1/ 3)   [     0 ]
+adding [1] ( 2/ 3)   [     0     1 ]
+adding [2] ( 3/ 3)   [     0     1     2 ]
+adding [3] ( 4/ 6)   [     0     1     2     3 ]
+adding [4] ( 5/ 6)   [     0     1     2     3     4 ]
+adding [5] ( 6/ 6)   [     0     1     2     3     4     5 ]
+adding [6] ( 7/12)   [     0     1     2     3     4     5     6 ]
+adding [7] ( 8/12)   [     0     1     2     3     4     5     6     7 ]
+adding [8] ( 9/12)   [     0     1     2     3     4     5     6     7     8 ]
+adding [9] (10/12)   [     0     1     2     3     4     5     6     7     8     9 ]
+adding [10] (11/12)   [     0     1     2     3     4     5     6     7     8     9    10 ]
+adding [11] (12/12)   [     0     1     2     3     4     5     6     7     8     9    10    11 ]
+adding [12] (13/24)   [     0     1     2     3     4     5     6     7     8     9    10    11    12 ]
+adding [13] (14/24)   [     0     1     2     3     4     5     6     7     8     9    10    11    12    13 ]
+adding [14] (15/24)   [     0     1     2     3     4     5     6     7     8     9    10    11    12    13    14 ]
 
-search_entry returned: 4
+removed [4]: (14/24)   [     0     1     2     3     5     6     7     8     9    10    11    12    13    14 ]
 
-removed [4]: (14/24) [    0     1     2     3     5     6     7     8     9    10    11    12    13    14 ]
+inserted 99 at position 4: (15/24)   [     0     1     2     3    99     5     6     7     8     9    10    11    12    13    14 ]
 
-inserted 99 at position 4: (15/24) [    0     1     2     3    99     5     6     7     8     9    10    11    12    13    14 ]
+select_entry at position 4 returned item: 99
 
-erased item at position 4 (the 99): (14/24) [    0     1     2     3     5     6     7     8     9    10    11    12    13    14 ]
+search_entry item 99 returned position: 4
 
-removed: [14] (13/24) [    0     1     2     3     5     6     7     8     9    10    11    12    13 ]
-removed: [13] (12/24) [    0     1     2     3     5     6     7     8     9    10    11    12 ]
-removed: [12] (11/24) [    0     1     2     3     5     6     7     8     9    10    11 ]
-removed: [11] (10/24) [    0     1     2     3     5     6     7     8     9    10 ]
-removed: [10] ( 9/24) [    0     1     2     3     5     6     7     8     9 ]
-removed: [9] ( 8/24) [    0     1     2     3     5     6     7     8 ]
-removed: [8] ( 7/24) [    0     1     2     3     5     6     7 ]
-removed: [7] ( 6/12) [    0     1     2     3     5     6 ]
-removed: [6] ( 5/12) [    0     1     2     3     5 ]
-removed: [5] ( 4/12) [    0     1     2     3 ]
-removed: [3] ( 3/ 6) [    0     1     2 ]
-removed: [2] ( 2/ 6) [    0     1 ]
-removed: [1] ( 1/ 6) [    0 ]
-removed: [0] ( 0/ 6) []
+search_entry item 4 returned position: -1
+
+update_entry position 4 with 77: (15/24)   [     0     1     2     3    77     5     6     7     8     9    10    11    12    13    14 ]
+
+erased item at position 4 (the 77): (14/24)   [     0     1     2     3     5     6     7     8     9    10    11    12    13    14 ]
+
+removed: [14] (13/24)   [     0     1     2     3     5     6     7     8     9    10    11    12    13 ]
+removed: [13] (12/24)   [     0     1     2     3     5     6     7     8     9    10    11    12 ]
+removed: [12] (11/24)   [     0     1     2     3     5     6     7     8     9    10    11 ]
+removed: [11] (10/24)   [     0     1     2     3     5     6     7     8     9    10 ]
+removed: [10] ( 9/24)   [     0     1     2     3     5     6     7     8     9 ]
+removed: [9] ( 8/24)   [     0     1     2     3     5     6     7     8 ]
+removed: [8] ( 7/24)   [     0     1     2     3     5     6     7 ]
+removed: [7] ( 6/12)   [     0     1     2     3     5     6 ]
+removed: [6] ( 5/12)   [     0     1     2     3     5 ]
+removed: [5] ( 4/12)   [     0     1     2     3 ]
+removed: [3] ( 3/ 6)   [     0     1     2 ]
+removed: [2] ( 2/ 6)   [     0     1 ]
+removed: [1] ( 1/ 3)   [     0 ]
+removed: [0] ( 0/ 3)   [ ]
 ----- end of function --------
 [       OK ] TEST_BASIC.TestBasicInt (0 ms)
 [ RUN      ] TEST_BASIC.TestBasicString
 MINIMUM_CAPACITY: 3
-adding [0] ( 1/ 3) [vector ]
-adding [1] ( 2/ 3) [vector   BST ]
-adding [2] ( 3/ 3) [vector   BST  Pair ]
-adding [3] ( 4/ 6) [vector   BST  Pair   Map ]
-adding [4] ( 5/ 6) [vector   BST  Pair   Map Multimap ]
-adding [5] ( 6/ 6) [vector   BST  Pair   Map Multimap Stack ]
-adding [6] ( 7/12) [vector   BST  Pair   Map Multimap Stack Queue ]
+adding [0] ( 1/ 3)   [vector ]
+adding [1] ( 2/ 3)   [vector   BST ]
+adding [2] ( 3/ 3)   [vector   BST  Pair ]
+adding [3] ( 4/ 6)   [vector   BST  Pair   Map ]
+adding [4] ( 5/ 6)   [vector   BST  Pair   Map   Set ]
+adding [5] ( 6/ 6)   [vector   BST  Pair   Map   Set Stack ]
+adding [6] ( 7/12)   [vector   BST  Pair   Map   Set Stack Queue ]
 
-search_entry returned: Map
+select_entry at position 4 returned item: Set
 
-removed: [Map]: ( 6/12) [vector   BST  Pair Multimap Stack Queue ]
+search_entry item Set returned position: 4
 
-removed: [Queue] ( 5/12) [vector   BST  Pair Multimap Stack ]
-removed: [Stack] ( 4/12) [vector   BST  Pair Multimap ]
-removed: [Multimap] ( 3/ 6) [vector   BST  Pair ]
-removed: [Pair] ( 2/ 6) [vector   BST ]
-removed: [BST] ( 1/ 6) [vector ]
-removed: [vector] ( 0/ 6) []
+search_entry item SetSet returned position: -1
+
+update_entry position 4 with string("Tree"): ( 7/12)   [vector   BST  Pair   Map  Tree Stack Queue ]
+
+removed: [Map]: ( 6/12)   [vector   BST  Pair  Tree Stack Queue ]
+
+removed: [Queue] ( 5/12)   [vector   BST  Pair  Tree Stack ]
+removed: [Stack] ( 4/12)   [vector   BST  Pair  Tree ]
+removed: [Tree] ( 3/ 6)   [vector   BST  Pair ]
+removed: [Pair] ( 2/ 6)   [vector   BST ]
+removed: [BST] ( 1/ 3)   [vector ]
+removed: [vector] ( 0/ 3)   [ ]
 ----- end of function --------
 [       OK ] TEST_BASIC.TestBasicString (1 ms)
 [----------] 2 tests from TEST_BASIC (1 ms total)
