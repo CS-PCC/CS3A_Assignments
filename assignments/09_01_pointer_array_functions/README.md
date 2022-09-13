@@ -37,7 +37,7 @@ T* reallocate(T* a, int size, int capacity);
 template <typename T>
 T* deallocate(T* a);
 
-// init array with value
+// init array with init_item value
 template<typename T>
 void init_array(T* a, int size, T init_item=T());
 
@@ -49,11 +49,7 @@ void print_array(T* a, int size, int capacity=0, ostream& outs=cout);
 template <typename T>
 void print(T* a, int how_many, ostream& outs=cout);
 
-// search for the first 'find_me' and return pointer of it
-template<typename T>
-T* search_entry(T* a, int size, const T& find_me);
-
-// search for the first 'find_me' and return index of it
+// search for the first 'find_me' and return index of it, -1 if not find
 template <typename T>
 int search(T* a, int size, const T& find_me);
 
