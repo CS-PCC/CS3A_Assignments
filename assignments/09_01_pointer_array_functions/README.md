@@ -77,6 +77,10 @@ void copy_array(T* dest, const T* src, int many_to_copy);
 template <typename T>
 T* copy_array(const T* src, int size);
 
+//return pointer at index pos
+template <typename T>
+T* at(T* a, int size, int pos);
+
 // return array as a string
 template <typename T>
 string array_string(const T* a, int size);
