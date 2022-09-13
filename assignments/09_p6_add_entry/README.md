@@ -1,9 +1,11 @@
-# Add Entry
+# [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 
 - Accept [09_p6_add_entry](https://classroom.github.com/a/lbZU9bOM)
 - Get [basic_test.cpp](basic_test.cpp)
 
 ---
+
+Create, Read, Update, and Delete entry.
 
 I do not want to see any loops in functions.
 
@@ -35,7 +37,7 @@ T* add_entry(T* list, const T& new_entry, int& size, int& capacity);
 // remove the entry by index
 // reallocate half the space when the size reaches 1/4 of the capacity
 template <typename T>
-T* erase_entry(T* list, int index, int& size, int& capacity); 
+T* erase_entry(T* list, int index, int& size, int& capacity);
 
 // remove the first ocurred entry from list
 template<typename T>
@@ -44,6 +46,18 @@ T* remove_entry(T* list, const T& delete_me, int& size, int& capacity);
 // remove the last entry from list
 template<typename T>
 T* remove_last_entry(T* list, T& popped, int& size, int& capacity);
+
+// select item and return pointer of index selected entry, nullptr if out of range
+template<typename T>
+T* select_entry(T* list, int size, int select_here);
+
+// search for the first 'find_me' and return pointer of it, nullptr if not found
+template<typename T>
+T* search_entry(T* list, int size, const T& find_me);
+
+// update item with new_update, return the pointer of index updated entry
+template<typename T>
+T* update_entry(T* list, int size, int update_here, const T& new_update);
 
 // Definition
 
@@ -67,7 +81,7 @@ using namespace std;
 template<typename T>
 void test_string();
 
-int main(int argv, char** argc)
+int main()
 {
     cout << "\n" << endl;
 
@@ -112,24 +126,30 @@ void test_string() {
     cout << "Deleting Red" << endl;
     list = remove_entry(list, string("Red"), size, capacity);
     print_array(list, size, capacity);
+    cout << "Deleting Paula" << endl;
+    list = remove_entry(list, string("Paula"), size, capacity);
+    print_array(list, size, capacity);
 }
 
-
-// ( 1/ 3)   [  Erika ]
-// ( 2/ 3)   [  Erika  Red ]
-// ( 3/ 3)   [  Erika  Red  Bo ]
-// ( 4/ 6)   [  Erika  Red  Bo  Pierson ]
-// ( 5/ 6)   [  Erika  Red  Bo  Pierson  Mike ]
-// ( 6/ 6)   [  Erika  Red  Bo  Pierson  Mike  Mac ]
-// ( 7/12)   [  Erika  Red  Bo  Pierson  Mike  Mac  Paula ]
-// Deleting Erika
-// ( 6/12)   [  Red  Bo  Pierson  Mike  Mac  Paula ]
-// Deleting Bo
-// ( 5/12)   [  Red  Pierson  Mike  Mac  Paula ]
-// Deleting Mike
-// ( 4/12)   [  Red  Pierson  Mac  Paula ]
-// Deleting Pierson
-// ( 3/ 6)   [  Red  Mac  Paula ]
-// Deleting Red
-// ( 2/ 6)   [  Mac  Paula ]
+/*
+( 1/ 3)   [  Erika ]
+( 2/ 3)   [  Erika  Red ]
+( 3/ 3)   [  Erika  Red  Bo ]
+( 4/ 6)   [  Erika  Red  Bo  Pierson ]
+( 5/ 6)   [  Erika  Red  Bo  Pierson  Mike ]
+( 6/ 6)   [  Erika  Red  Bo  Pierson  Mike  Mac ]
+( 7/12)   [  Erika  Red  Bo  Pierson  Mike  Mac  Paula ]
+Deleting Erika
+( 6/12)   [  Red  Bo  Pierson  Mike  Mac  Paula ]
+Deleting Bo
+( 5/12)   [  Red  Pierson  Mike  Mac  Paula ]
+Deleting Mike
+( 4/12)   [  Red  Pierson  Mac  Paula ]
+Deleting Pierson
+( 3/ 6)   [  Red  Mac  Paula ]
+Deleting Red
+( 2/ 6)   [  Mac  Paula ]
+Deleting Paula
+( 1/ 3)   [   Mac ]
+*/
 ```
