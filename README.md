@@ -24,6 +24,7 @@
 - [`09_00_pointers`](assignments/09_00_pointers/)
 - [`09_01_pointer_array_functions`](assignments/09_01_pointer_array_functions/)
 - [`09_p6_add_entry`](assignments/09_p6_add_entry/)
+- [`09_04_two_pointers`](assignments/09_04_two_pointers/)
 - [`09_p5_lab_and_plane`](assignments/09_p5_lab_and_plane/)
 
 
