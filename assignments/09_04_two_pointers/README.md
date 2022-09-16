@@ -134,7 +134,7 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 
 ## Two Pointers Functions
 
-Implement following function in `includes/two_pointers/two_pointers.h`
+Implement following functions in `includes/two_pointers/two_pointers.h`
 
 ```c++
 #ifndef TWO_POINTERS_H
