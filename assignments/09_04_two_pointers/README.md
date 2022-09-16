@@ -132,9 +132,9 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 - `s` consists of English lowercase letters (a-z).
 
 
-### Header file
+## Two Pointers Functions
 
-`two_pointers.h`
+Implement following function in `includes/two_pointers/two_pointers.h`
 
 ```c++
 #ifndef TWO_POINTERS_H
