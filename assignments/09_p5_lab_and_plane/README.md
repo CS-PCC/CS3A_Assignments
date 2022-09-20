@@ -7,6 +7,7 @@
 
 Dynamic Two Dimensional Array (with variable column count per row)
 
+- Please read the [main.cpp](main.cpp) before you begin. 
 - Please read the [Guidelines for pointers](https://docs.google.com/document/d/1WDgzNbWrGjDA7739GjZ8Xna_RrUX95w6XqKL4mOmDpc/edit?usp=sharing) before you begin. 
 - Build lower-level functions such as Allocate, Initialize, Get, Read and write...
 - Build two applications for Plane reservation/cancel and Lab login/logout based on these low-level functions.
