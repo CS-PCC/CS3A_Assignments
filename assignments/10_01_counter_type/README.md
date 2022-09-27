@@ -7,6 +7,8 @@
 
 Please read the [Guidelines for classes](https://docs.google.com/document/d/1dkqJa-h6e-GmlNwc-zgX7IPTrU8YJNMLrbrLS8idU3k/edit?usp=sharing) before you begin. 
 
+Please read [PosInt](PosInt) class as reference.
+
 Design the class using the specifications in the textbook.
 
 CounterType will have the following declarations:
