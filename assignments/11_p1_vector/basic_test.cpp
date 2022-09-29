@@ -8,7 +8,7 @@
 
 //------------------------------------------------------------------------------
 //Files we are testing:
-#include "../../includes/vector/vector_class.h"
+#include "../../includes/vector/my_vector.h"
 
 
 
@@ -24,7 +24,9 @@ using namespace std;
 
 bool test_vector(bool debug = false){
   int a[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-  Vector<int> v(a, 10);
+  Vector<int> v;
+  Vector<int> v1(a, 10);
+  v = v1;
   cout << v << endl;
   v[0] = 100;
   cout << v << endl;
@@ -33,30 +35,52 @@ bool test_vector(bool debug = false){
   v.front() = 1000;
   v.back() = 99;
   cout << v << endl;
-  v += 10;
+  v.pop_back();
+  v.pop_back();
+  cout << v << endl;
+  v.push_back(10);
   cout << v << endl;
   v.insert(3, 300);
   cout << v << endl;
   v.erase(5);
   cout << v << endl;
-  cout << "8 is at index: [" << v.index_of(8) << "]"<<endl;
+  cout << "9 is at index: [" << v.index_of(9) << "]" << endl;
+  cout << "300 is at index: [" << v.index_of(300) << "]" << endl;
+  cout << "at index: 5: " << v.at(5) << endl;
+  cout << "at index: 8: " << v[8] << endl;
   cout << "vector size is now: " << v.size() << endl;
   cout << "vector capacity is now: " << v.capacity() << endl;
-  v += 12;
-  v += 13;
-  cout << "vector capacity is now: " << v.capacity() << endl;
+  v.resize(14, 66);
+  cout << "vector capacity is now: " << v.capacity() << endl << endl;
+  cout << v << endl;
+  v.resize(11);
+  cout << v << endl;
+  v.resize(13, 88);
+  cout << v << endl;
+  v.reserve(16);
   cout << v << endl;
   v.push_back(14);
+  cout << v << endl;
   v.push_back(15);
   cout << v << endl;
-  int popped;
+  v.push_back(16);
+  cout << v << endl;
+  v.push_back(17);
+  cout << v << endl;
   v.pop_back();
   v.pop_back();
   v.pop_back();
-  popped = v.pop_back();
-  cout << popped << " is popped back from vector" << endl;
+  v.pop_back();
+  cout << v << endl;
+  v.pop_back();
+  v.pop_back();
+  v.pop_back();
+  v.pop_back();
+  v.pop_back();
   cout << v << endl;
   cout << "vector is empty: " << boolalpha << v.empty() << endl;
+  cout << "vector size is now: " << v.size() << endl;
+  cout << "vector capacity is now: " << v.capacity() << endl;
   cout << "\n\n-------- D O N E -------------\n" << endl;
   return true;
 }
@@ -89,29 +113,63 @@ includes
 ├── array_functions
 │   └── array_functions.h
 └── vector
-    └── vector_class.h
+    └── my_vector.h
 ----------running basic_test.cpp---------
 [==========] Running 1 test from 1 test case.
 [----------] Global test environment set-up.
 [----------] 1 test from TEST_BASIC_TEST
 [ RUN      ] TEST_BASIC_TEST.BasicTest
-(10/12) [    0     1     2     3     4     5     6     7     8     9 ]
-(10/12) [  100     1     2     3     4     5     6     7     8     9 ]
-(10/12) [  100   101     2     3     4     5     6     7     8     9 ]
-(10/12) [ 1000   101     2     3     4     5     6     7     8    99 ]
-(11/12) [ 1000   101     2     3     4     5     6     7     8    99    10 ]
-(12/12) [ 1000   101     2   300     3     4     5     6     7     8    99    10 ]
-(11/12) [ 1000   101     2   300     3     5     6     7     8    99    10 ]
-8 is at index: [8]
-vector size is now: 11
-vector capacity is now: 12
-vector capacity is now: 24
-(13/24)   [1000 101   2 300   3   5   6   7   8  99  10  12  13 ]
-(15/24)   [1000 101   2 300   3   5   6   7   8  99  10  12  13  14  15 ]
-12 is popped back from vector
-(11/24)   [1000 101   2 300   3   5   6   7   8  99  10 ]
+(10/10)   [     0     1     2     3     4     5     6     7     8     9 ]
+
+(10/10)   [   100     1     2     3     4     5     6     7     8     9 ]
+
+(10/10)   [   100   101     2     3     4     5     6     7     8     9 ]
+
+(10/10)   [  1000   101     2     3     4     5     6     7     8    99 ]
+
+( 8/10)   [  1000   101     2     3     4     5     6     7 ]
+
+( 9/10)   [  1000   101     2     3     4     5     6     7    10 ]
+
+(10/10)   [  1000   101     2   300     3     4     5     6     7    10 ]
+
+( 9/10)   [  1000   101     2   300     3     5     6     7    10 ]
+
+9 is at index: [-1]
+300 is at index: [3]
+at index: 5: 5
+at index: 8: 10
+vector size is now: 9
+vector capacity is now: 10
+vector capacity is now: 14
+
+(14/14)   [  1000   101     2   300     3     5     6     7    10    66    66    66    66    66 ]
+
+(11/14)   [  1000   101     2   300     3     5     6     7    10    66    66 ]
+
+(13/14)   [  1000   101     2   300     3     5     6     7    10    66    66    88    88 ]
+
+(13/16)   [  1000   101     2   300     3     5     6     7    10    66    66    88    88 ]
+
+(14/16)   [  1000   101     2   300     3     5     6     7    10    66    66    88    88    14 ]
+
+(15/16)   [  1000   101     2   300     3     5     6     7    10    66    66    88    88    14    15 ]
+
+(16/16)   [  1000   101     2   300     3     5     6     7    10    66    66    88    88    14    15    16 ]
+
+(17/32)   [  1000   101     2   300     3     5     6     7    10    66    66    88    88    14    15    16    17 ]
+
+(13/32)   [  1000   101     2   300     3     5     6     7    10    66    66    88    88 ]
+
+( 8/16)   [  1000   101     2   300     3     5     6     7 ]
+
 vector is empty: false
+vector size is now: 8
+vector capacity is now: 16
+
+
 -------- D O N E -------------
+
 [       OK ] TEST_BASIC_TEST.BasicTest (0 ms)
 [----------] 1 test from TEST_BASIC_TEST (0 ms total)
 [----------] Global test environment tear-down
