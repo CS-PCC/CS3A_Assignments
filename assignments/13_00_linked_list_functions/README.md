@@ -100,23 +100,6 @@ void _clear_list(node<T>* &head);
 template <typename T>
 T& _at(node<T>* head, int pos);
 
-//. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-//      Sorted List Routines. order: 0: ascending, order: other: descending
-//                              Assume a Sorted List
-//. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-
-//insert
-template <typename T>
-node<T>* _insert_sorted(node<T>* &head, T item, bool ascending=true);
-
-//insert or add if a dup
-template <typename T>
-node<T>* _insert_sorted_and_add(node<T>* &head, T item, bool ascending=true);
-
-//node after which this item goes order: 0 ascending
-template <typename T>
-node<T>* _where_this_goes(node<T>* head, T item, bool ascending=true);
-
 //Last node in the list, never use this function.
 template <typename T>
 node<T>* _last_node(node<T>* head);
