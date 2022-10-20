@@ -36,7 +36,8 @@ bool test_stack(bool debug = false)
     cout << s;
   }
   cout << "top of stack: " << s.top() << endl;
-  cout << "pop stack: " << s.pop() << endl;
+  cout << "pop stack: " << endl;
+  s.pop();
   cout << s << endl;
   cout << "size of the stack: " << s.size() << endl;
   cout << "is stack empty? " << boolalpha << s.empty() << endl;
@@ -81,7 +82,8 @@ bool test_queue(bool debug = false)
   }
   cout << "front of queue: " << q.front() << endl;
   cout << "rear of queue: " << q.back() << endl;
-  cout << "pop queue: " << q.pop() << endl;
+  cout << "pop queue: " << endl;
+  q.pop();
   cout << q << endl;
   cout << "size of the queue: " << q.size() << endl;
   cout << "is queue empty? " << boolalpha << q.empty() << endl;
@@ -160,7 +162,7 @@ stack.push():
 [3]->[2]->[1]->[0]->|||
 [4]->[3]->[2]->[1]->[0]->|||
 top of stack: 4
-pop stack: 4
+pop stack: 
 [3]->[2]->[1]->[0]->|||
 
 size of the stack: 4
@@ -185,7 +187,7 @@ stack top to bottom:
 --------- Stack DONE ---------
 
 
-[       OK ] BASIC_TEST.TestStack (0 ms)
+[       OK ] BASIC_TEST.TestStack (1 ms)
 [ RUN      ] BASIC_TEST.TestQueue
 queue.push(): 
 [0]->|||
@@ -195,7 +197,7 @@ queue.push():
 [0]->[1]->[2]->[3]->[4]->|||
 front of queue: 0
 rear of queue: 4
-pop queue: 0
+pop queue: 
 [1]->[2]->[3]->[4]->|||
 
 size of the queue: 4
