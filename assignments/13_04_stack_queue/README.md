@@ -73,7 +73,7 @@ public:
 
   //Operations:
   void push(T item);
-  T pop();
+  void pop();
 
   //Accessors:
   Iterator begin() const;            //Iterator to the head node
@@ -163,7 +163,7 @@ public:
 
   //Operations:
   void push(T item);                  //Enqueue
-  T pop();                            //Dequeue
+  void pop();                         //Dequeue
 
   //Accessors:
   Iterator begin() const;             //Iterator to the head node
