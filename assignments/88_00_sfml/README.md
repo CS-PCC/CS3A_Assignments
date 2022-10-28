@@ -23,6 +23,6 @@ Try the init SFML project to make sure you install SFML successfully.
 
 
 ## Animate
-
-<img src="animate/animate.gif" align="center" width="720" height="540">
-
+<p align="center">
+    <img src="animate/animate.gif" width="720" height="540">
+</p>
