@@ -1,0 +1,6 @@
+cd "/Users/zq/Gits/CS3A/SFML/single_ball/" && \
+g++ *.cpp -o main \
+-I /usr/local/Cellar/sfml/2.5.1_1/include \
+-L /usr/local/Cellar/sfml/2.5.1_1/lib -l sfml-system -l sfml-window -l sfml-graphics -l sfml-audio -l sfml-network \
+-Wl,-rpath /usr/local/Cellar/sfml/2.5.1_1/lib && \
+"/Users/zq/Gits/CS3A/SFML/single_ball/"main

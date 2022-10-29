@@ -17,12 +17,24 @@ Before working on SFML project, you should install SFML.
 
 Try the init SFML project to make sure you install SFML successfully.
 
-- [main.cpp](start_sfml/main.cpp)
+- [start_sfml](start_sfml/main.cpp)
 
 ![start_sfml](start_sfml/start_sfml.png)
 
 
 ## Animate
-<p align="center">
-    <img src="animate/animate.gif" width="720" height="540">
-</p>
+
+Try **animate** SFML project, you will update color for all cells.
+
+- [animate](animate/main.cpp)
+ 
+![animate](animate/animate.png)
+
+
+## Single ball
+
+Try single ball SFML project, you will see a ball moves in main screen on left, and a panel on right with text messages.
+
+- [single_ball](single_ball)
+
+![single_ball](single_ball/single_ball.png)
