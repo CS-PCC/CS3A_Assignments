@@ -54,14 +54,11 @@
 - [`15_07_rpn_shunting_yard`](assignments/15_07_rpn_shunting_yard)
 
 
+## SFML
+
+- [`88_00_sfml`](assignments/88_00_sfml)
+
+
 ## Final project
 
 - [`99_00_final_project`](assignments/99_00_final_project)
-
-
-## SFML
-
-- [`Install SFML (Windows)`](https://docs.google.com/document/d/1D8KcG9w_2JPD_hhBAxI_PQgN9tQmc3JdQppGjX18rA0/edit?usp=sharing)
-- [`Install SFML (Mac)`](https://docs.google.com/document/d/1x1n6g70OMr4AjLbf73KOd5mDQu-2EU29XKltka4jQ5g/edit?usp=sharing)
-- [`SFML Tutorials`](https://www.sfml-dev.org/)
-- [`SFML Examples`](assignments/88_00_sfml)

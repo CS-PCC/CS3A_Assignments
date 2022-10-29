@@ -8,6 +8,7 @@ Before working on SFML project, you should install SFML.
 
 - [`Install SFML (Windows)`](https://docs.google.com/document/d/1D8KcG9w_2JPD_hhBAxI_PQgN9tQmc3JdQppGjX18rA0/edit?usp=sharing)
 - [`Install SFML (Mac)`](https://docs.google.com/document/d/1x1n6g70OMr4AjLbf73KOd5mDQu-2EU29XKltka4jQ5g/edit?usp=sharing)
+- [`SFML Tutorials`](https://www.sfml-dev.org/tutorials/2.5/)
 
 
 ## Start SFML
