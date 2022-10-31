@@ -1,4 +1,4 @@
-# Iterated List
+# Reverse List
 
 - Accept [13_08_reverse_list](https://classroom.github.com/a/6BpNoCaJ)
 - Get [basic_test.cpp](basic_test.cpp)
@@ -74,7 +74,7 @@ Output: [5]->|||
 - `1 <= m <= n <= numbers of nodes`
 
 
-## Two Pointers Functions
+## Reverse List Functions
 
 Implement following functions in `includes/reverse_list/reverse_list.h`
 
