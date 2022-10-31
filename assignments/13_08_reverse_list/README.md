@@ -76,7 +76,7 @@ Output: [5]->|||
 
 ## Reverse List Functions
 
-Implement following functions in `includes/reverse_list/reverse_list.h`
+Implement following functions in `includes/reverse_list/reverse_list.h`, feel free to add any helper functions if you need.
 
 Try to understand and implement **Iterative** and **Recursive** methods for all three functions.
 
