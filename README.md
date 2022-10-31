@@ -47,6 +47,7 @@
 - [`13_03_simple_list_class`](assignments/13_03_simple_list_class/)
 - [`13_07_iterated_list`](assignments/13_07_iterated_list/)
 - [`13_04_stack_queue`](assignments/13_04_stack_queue/)
+- [`13_08_reverse_list`](assignments/13_08_reverse_list/)
 
 
 ## Chapter 15: Inheritance
