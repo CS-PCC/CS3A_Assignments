@@ -52,6 +52,7 @@
 
 ## Chapter 15: Inheritance
 
+- [`15_06_evaluate_rpn_shunting_yard`](assignments/15_06_evaluate_rpn_shunting_yard)
 - [`15_07_rpn_shunting_yard`](assignments/15_07_rpn_shunting_yard)
 
 
