@@ -111,6 +111,8 @@ public:
   void Print() const;                   //print the list
   void PrintBackwards() const;          //print the list backwards
 
+  void clear();                         //clear list
+
   template <typename U>                 //insertion operator, Note template arg U   
   friend ostream& operator <<(ostream& outs, const List<U>& l);
   
