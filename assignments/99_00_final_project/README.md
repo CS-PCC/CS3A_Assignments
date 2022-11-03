@@ -9,10 +9,7 @@ Code must be FULLY COMMENTED.
 
 ## [SFML](https://www.sfml-dev.org/)
 
-Before working on final project, you should familiar with SFML.
-- [Install SFML (Windows)](https://drive.google.com/file/d/1fHHAV7YIhNbrM-Zl0X-EJ879DS94JxZC/view?usp=sharing)
-- [Install SFML (Mac)](https://docs.google.com/document/d/1x1n6g70OMr4AjLbf73KOd5mDQu-2EU29XKltka4jQ5g/edit?usp=sharing)
-- [Start SFML](https://drive.google.com/file/d/1FnIoJjAWXD18M3OcH03tVyXo4tkNmdSr/view)
+Before working on final project, you should familiar with [SFML](https://github.com/CS-PCC/CS3A_Assignments/tree/master/assignments/88_00_sfml)
 
 
 ## Graphing calculator
