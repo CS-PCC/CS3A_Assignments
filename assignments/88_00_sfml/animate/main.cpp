@@ -5,10 +5,10 @@
 
 using namespace std;
 
-const int SCREEN_WIDTH = 3456;
-const int SCREEN_HEIGHT = 2234;
-const int GRID_WIDTH = 170;
-const int GRID_HEIGHT = 110;
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
+const int GRID_WIDTH = 40;
+const int GRID_HEIGHT = 30;
 const int CELL_SIZE = 20;
 
 class Anim
