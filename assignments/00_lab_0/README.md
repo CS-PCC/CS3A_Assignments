@@ -5,7 +5,7 @@
 
 ---
 
-Before working on assignment, [setup system environment](https://github.com/stephengineer-CS003A-classroom/CS3A_Setup) first.
+Before working on assignment, [setup system environment](https://github.com/CS-PCC/CS3A_Setup) first.
 
 
 The following code is the prototype of functions in `array_functions.h`, and you need to implement functions in `array_functions.cpp`
