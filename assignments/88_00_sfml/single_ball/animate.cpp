@@ -77,15 +77,35 @@ void Animate::processEvents()
                 switch(event.key.code)
                 {
                     case sf::Keyboard::Left:
-                        sidebar[SB_KEY_PRESSED] = "LEFT ARROW";
+                        sidebar[SB_DIRECTION] = "LEFT ARROW";
                         command = 4;
                         break;
                     case sf::Keyboard::Right:
-                        sidebar[SB_KEY_PRESSED] = "RIGHT ARROW";
+                        sidebar[SB_DIRECTION] = "RIGHT ARROW";
                         command = 6;
                         break;
+                    case sf::Keyboard::Up:
+                        sidebar[SB_SPEED] = "UP ARROW";
+                        command = 8;
+                        break;
+                    case sf::Keyboard::Down:
+                        sidebar[SB_SPEED] = "DOWN ARROW";
+                        command = 2;
+                        break;
+                    case sf::Keyboard::C:
+                        sidebar[SB_COLOR] = "C Pressed";
+                        command = 99;
+                        break;
+                    case sf::Keyboard::LBracket:
+                        sidebar[SB_SIZE] = "LEFT BRACKET";
+                        command = 11;
+                        break;
+                    case sf::Keyboard::RBracket:
+                        sidebar[SB_SIZE] = "RIGHT BRACKET";
+                        command = 12;
+                        break;
                     case sf::Keyboard::Escape:
-                        sidebar[SB_KEY_PRESSED] = "ESC: EXIT";
+                        sidebar[SB_SYSTEM] = "ESC: EXIT";
                         window.close();
                         break;
                     default:

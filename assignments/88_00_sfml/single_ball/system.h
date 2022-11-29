@@ -18,6 +18,7 @@ public:
     int Size();
     void Draw(sf::RenderWindow& widnow);
 private:
+    Random r;
     sf::CircleShape shape;
     sf::Vector2f vel; // velocity
 };
